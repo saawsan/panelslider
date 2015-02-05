@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="home home-1">
+<head>
+	<meta charset="UTF-8">
+	<title>Panelslider</title>
+	
+	<meta name="viewport" content="width=device-width">
+
+	<style>
+		body {
+			margin:0; padding:20px;
+			background:#FAFAFA; color:#333;
+			font:13px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		h1 {
+			margin:0 0 1em; padding-bottom:0.2em;
+			border-bottom:1px solid #CCC;
+			font:italic normal 26px/1.5 Georgia, 'Times New Roman', serif;
+		}
+		ul, li {
+			margin:0; padding:0;
+			list-style:none;
+		}
+
+		/* panelslider CSS */
+		.panelslider-wrapper {
+			width:100%;
+			overflow:hidden;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			-ms-touch-action: pan-y;
+			touch-action: pan-y;
+			-webkit-tap-highlight-color: transparent;
+		}
+		.panelslider {
+			-webkit-transform:translate3d(0, 0, 0);
+			-moz-transform:translate3d(0, 0, 0);
+			-ms-transform:translate3d(0, 0, 0);
+			-o-transform:translate3d(0, 0, 0);
+			transform:translate3d(0, 0, 0);
+		}
+		.panelslider > li {
+			float:left;
+			margin-left:1em;
+		}
+		.panelslider > li:first-child {
+			margin-left:0;
+		}
+
+		/* custom CSS */
+		.my-panel-slider .content {
+			padding:5em 0;
+			width:200px;
+			border-bottom:3px solid #008583;
+			background:#019593;
+			color:#FFF;
+			text-align:center;
+		}
+		.my-panel-slider .active .content {
+			width:400px;
+			border-bottom:3px solid #26A7A5;
+			background:#2BBBB9;
+		}
+		.my-panel-slider .panelslider-disabled {
+			opacity:.5;
+		}
+	</style>
+</head>
+<body>
+	<h1>Panelslider</h1>
+	<p><strong>Required:</strong> jquery.js - panelslider-jplugin.js</p>
+	<p><strong>Options:</strong> initIndex (int || 'center')</p>
+
+
+	<ul class="panelslider my-panel-slider">
+		<li><div class="content">content 1</div></li>
+		<li><div class="content">content 2</div></li>
+		<li><div class="content">content 3</div></li>
+		<li><div class="content">content 4</div></li>
+		<li><div class="content">content 5</div></li>
+		<li><div class="content">content 6</div></li>
+	</ul>
+
+
+
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/panelslider-jplugin.js"></script>
+	<script>
+	$('.panelslider').panelslider({
+		prevBtn : 'précédent',
+		nextBtn : 'suivant',
+		initIndex : 'center' //'center' or int.
+	});
+	</script>
+</body>
+</html>
